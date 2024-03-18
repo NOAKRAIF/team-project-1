@@ -1,3 +1,13 @@
+'''
+Date: 18/3/2024
+Group: Sapir Natanov 322378068
+Dor Maudi 207055138
+Noa Yasharzadeh 208595157
+Segev Isaac 207938085
+Git:https://github.com/DorMaudi/team-project-1
+Name: Noa Yasharzadeh 208595157
+'''
+
 import numpy as np
 
 from colors import bcolors

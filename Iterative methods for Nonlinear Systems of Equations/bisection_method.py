@@ -1,3 +1,13 @@
+'''
+Date: 18/3/2024
+Group: Sapir Natanov 322378068
+Dor Maudi 207055138
+Noa Yasharzadeh 208595157
+Segev Isaac 207938085
+Git:https://github.com/DorMaudi/team-project-1
+Name: Noa Yasharzadeh 208595157
+'''
+
 import math
 import numpy as np
 from colors import bcolors
@@ -46,8 +56,8 @@ def bisection_method(f, a, b, tol=1e-6):
 
     c, k = 0, 0
     steps = max_steps(a, b, tol)  # calculate the max steps possible
-
-    print("{:<10} {:<15} {:<15} {:<15} {:<15} {:<15} {:<15}".format("Iteration", "a", "b", "f(a)", "f(b)", "c", "f(c)"))
+    # print title
+    # print("{:<10} {:<15} {:<15} {:<15} {:<15} {:<15} {:<15}".format("Iteration", "a", "b", "f(a)", "f(b)", "c", "f(c)"))
 
     # while the diff af a&b is not smaller than tol, and k is not greater than the max possible steps
     while abs(b - a) > tol and k < steps:
@@ -60,8 +70,8 @@ def bisection_method(f, a, b, tol=1e-6):
             b = c  # move forward
         else:
             a = c  # move backward
-
-        print("{:<10} {:<15.6f} {:<15.6f} {:<15.6f} {:<15.6f} {:<15.6f} {:<15.6f}".format(k, a, b, f(a), f(b), c, f(c)))
+        # print table
+        # print("{:<10} {:<15.6f} {:<15.6f} {:<15.6f} {:<15.6f} {:<15.6f} {:<15.6f}".format(k, a, b, f(a), f(b), c, f(c)))
 
         k += 1
 
@@ -74,8 +84,8 @@ def bisection_method(f, a, b, tol=1e-6):
 
 if __name__ == '__main__':
     x = sp.symbols('x')
-    f = x**2 - 3
-    a, b = -2, 3
+    f = (6*x**4 - 7*x**3 - 2*x + 1)
+    a, b = 0, 5
     nextTest = (b - a) / 1000
     i = a + nextTest
 
@@ -83,6 +93,8 @@ if __name__ == '__main__':
         try:
             roots = bisection_method(f, a, i)
             print(bcolors.OKBLUE, f"\nThe equation f(x) has an approximate root at x = {roots}", bcolors.ENDC, "\n")
+        except ZeroDivisionError:
+            pass
         except ValueError:
             pass
         a = i

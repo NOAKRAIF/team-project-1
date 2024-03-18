@@ -312,7 +312,13 @@ def InverseMatrix(matrix,vector):
 
     return result
 
-
+def make_diagonally_dominant(A):
+    n = len(A)
+    for i in range(n):
+        row_sum = sum(abs(A[i][j]) for j in range(n) if j != i)
+        if abs(A[i][i]) <= row_sum:
+            A[i][i] = row_sum + 1
+    return A
 def RowXchange(matrix, vector):
     """
     Function for replacing rows with both a matrix and a vector
