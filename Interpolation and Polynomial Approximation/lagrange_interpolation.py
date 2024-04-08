@@ -35,13 +35,21 @@ def lagrange_interpolation(x_data, y_data, x):
 
 
 if __name__ == '__main__':
-    x_data = [1, 2, 5]
-    y_data = [1, 0, 2]
-    x_interpolate = 3  # The x-value where you want to interpolate
+    x_data = [1.2, 1.3, 1.4, 1.5, 1.6]
+    y_data = [-1.2, -2.3, -0.5, 0.89, 1.37]
+
+    #x_data = [0.35, 0.4, 0.55,0.65,0.7]
+    #y_data = [-3.5991, -2.4416, -0.9375, 4.0256, 2.6711]
+    x_interpolate = 1.35  # The x-value where you want to interpolate
+    x_interpolateB = 1.55
 
     try:
         polynomial_coefficients, y_interpolate = lagrange_interpolation(x_data, y_data, x_interpolate)
         print(bcolors.OKBLUE, "\nInterpolated value at x =", x_interpolate, "is y =", y_interpolate, bcolors.ENDC)
+        print("Polynomial Coefficients:", polynomial_coefficients)
+
+        polynomial_coefficients, y_interpolateB = lagrange_interpolation(x_data, y_data, x_interpolateB)
+        print(bcolors.OKBLUE, "\nInterpolated value at x =", x_interpolateB, "is y =", y_interpolateB, bcolors.ENDC)
         print("Polynomial Coefficients:", polynomial_coefficients)
     except ValueError as e:
         print(bcolors.FAIL, "Error:", e, bcolors.ENDC)

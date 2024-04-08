@@ -38,8 +38,10 @@ def linearInterpolation(table_points, point):
 
 if __name__ == '__main__':
 
-    table_points = [(0, 0), (1, 0.8415), (2, 0.9093), (3, 0.1411), (4, -0.7568), (5, -0.9589), (6, -0.2794)]
-    x = 9
+
+
+    table_points = [(0.35, -3.5991), (0.4, -2.4416), (0.55, -0.9375), (0.65, 4.0256), (0.7, 2.6711)]
+    x = 0.6
     print(bcolors.OKBLUE, "----------------- Interpolation & Extrapolation Methods -----------------\n", bcolors.ENDC)
     print(bcolors.OKBLUE, "Table Points: ", bcolors.ENDC, table_points)
     print(bcolors.OKBLUE, "Finding an approximation to the point: ", bcolors.ENDC, x)

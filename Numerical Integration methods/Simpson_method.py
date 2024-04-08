@@ -41,10 +41,11 @@ def simpsons_rule(f, a, b, n):
 
 
 if __name__ == '__main__':
-    f = lambda x: math.tan(x)
-    n = 60
-    a = -6
-    b = -2
+
+    f = lambda x:(math.sin(x**2 + 5*x + 6))/(2*math.e**(-x))
+    n = 64
+    a = -2.8
+    b = 1.8
 
     print(f" Division into n = {n} sections ")
     integral = simpsons_rule(f, a, b, n)
